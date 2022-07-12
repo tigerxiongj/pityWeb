@@ -150,6 +150,7 @@ const TestCaseDirectory = ({testcase, gconfig, project, user, loading, dispatch}
       key: 'name',
       // 自动省略多余数据
       ellipsis: true,
+      fixed: 'left',
     },
     {
       title: "请求协议",
@@ -190,6 +191,7 @@ const TestCaseDirectory = ({testcase, gconfig, project, user, loading, dispatch}
       dataIndex: 'ops',
       width: 130,
       key: 'ops',
+      fixed: 'right',
       render: (_, record) => <>
         <a href={`/#/apiTest/testcase/${currentDirectory[0]}/${record.id}`} target="_blank">详情</a>
         <Divider type="vertical"/>
@@ -625,7 +627,8 @@ const TestCaseDirectory = ({testcase, gconfig, project, user, loading, dispatch}
                                  saveCase({pagination: {...pagination, current: pg.current}})
                                }}
                                dataSource={testcases}
-                               loading={loading.effects['testcase/listTestcase'] || loading.effects['testcase/executeTestcase']}/>
+                               loading={loading.effects['testcase/listTestcase'] || loading.effects['testcase/executeTestcase']}
+                               scroll={{x: 900,}}/>
                       </Col>
                     </Row>
                   </> : <Empty image={emptyWork} imageStyle={{height: 230}}
