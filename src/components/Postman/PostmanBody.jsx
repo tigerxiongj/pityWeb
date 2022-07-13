@@ -24,6 +24,7 @@ import FormData from "@/components/Postman/FormData";
 import {connect} from 'umi';
 import JSONAceEditor from "@/components/CodeEditor/AceEditor/JSONAceEditor";
 import {IconFont} from "@/components/Icon/IconFont";
+import _ from 'lodash';
 
 const {Option} = Select;
 const {TabPane} = Tabs;
@@ -213,12 +214,19 @@ const PostmanBody = ({
 
   // 拼接http请求
   const onRequest = async () => {
-    const url = form.getFieldValue('url')
-    if (url === '') {
+    let url = form.getFieldValue('url');
+    if (!url) {
       notification.error({
         message: '请求Url不能为空',
       });
       return;
+    }
+    const basePathKey = form.getFieldValue('base_path');
+    if (basePathKey) {
+      if (currentAddress[basePathKey]) {
+        let basePath = Object.values(currentAddress[basePathKey])[0];
+        url = `${_.trimEnd(basePath, '/')}/${_.trimStart(url, '/')}`;
+      }
     }
     setLoading(true);
     const params = {
@@ -373,7 +381,6 @@ const PostmanBody = ({
   }
 
   const currentAddress = getAddress();
-
   const prefixSelector = (
     <Form.Item name="base_path" noStyle>
       <Select style={{width: 130}} placeholder="选择BasePath" showSearch allowClear

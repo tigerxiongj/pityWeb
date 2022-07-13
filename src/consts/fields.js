@@ -47,6 +47,7 @@ export default {
       >
         <TextArea
           placeholder="请输入预期结果，支持变量哦"
+          rows={10}
         />
       </AutoComplete>,
       span: 24,

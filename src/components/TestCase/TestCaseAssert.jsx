@@ -162,7 +162,7 @@ const TestCaseAssert = ({dispatch, testcase, caseId, createMode}) => {
   return (
     <Row gutter={8}>
       <Col span={24}>
-        <FormForModal visible={assertModal} fields={fields.CaseAsserts} title='用例断言' left={6} right={18}
+        <FormForModal visible={assertModal} fields={fields.CaseAsserts} title='用例断言' top={20} offset={3} left={6} right={18}
                       onFinish={onSaveAssert} onCancel={() => setAssertModal(false)} record={record}/>
         <Row style={{marginBottom: 16}}>
           <Col span={8}>

@@ -9,6 +9,7 @@ const FormForModal = ({
                         width,
                         left,
                         right,
+                        top,
                         formName,
                         record,
                         onFinish,
@@ -37,8 +38,16 @@ const FormForModal = ({
     labelCol: {span: left},
     wrapperCol: {span: right},
   }
+
+  let style = {
+    marginTop: offset,
+  };
+  if (top !== undefined) {
+    style.top = top;
+  }
+
   return (
-    <Modal style={{marginTop: offset}}
+    <Modal style={style}
            confirmLoading={loading}
            footer={Footer !== undefined ? <Footer onOk={onOk} onCancel={onCancel} onTest={() => {
              form.validateFields().then((values) => {
