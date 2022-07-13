@@ -51,9 +51,11 @@ const GConfig = ({gconfig, user, loading, dispatch}) => {
       title: 'value',
       dataIndex: 'value',
       key: 'value',
+      width: 200,
+      ellipsis: true,
       render: (text, record) => {
         if (record.key_type === 0) {
-          return text;
+          return record.value;
         }
         if (record.key_type === 1) {
           return <a onClick={() => {

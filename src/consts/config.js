@@ -91,7 +91,8 @@ export const CONFIG = {
     'length_gt': '长度大于',
     'length_le': '长度小于等于',
     'length_ge': '长度大于等于',
-    'json_equal': 'JSON等于'
+    'json_equal': 'JSON等于',
+    'json_match': 'JSON匹配',
   },
   ASSERT_TYPE_TAG: {
     'equal': <Tag color="success">等于</Tag>,
@@ -106,6 +107,7 @@ export const CONFIG = {
     'length_le': <Tag color="deeppink">长度小于等于</Tag>,
     'length_ge': <Tag>长度大于等于</Tag>,
     'json_equal': <Tag color="pink">JSON等于</Tag>,
+    'json_match': <Tag color="pink">JSON匹配</Tag>,
     'text_not_in': <Tag color="skyblue">文本不包含于</Tag>,
     'text_in': <Tag color="orange">文本包含于</Tag>,
   },
