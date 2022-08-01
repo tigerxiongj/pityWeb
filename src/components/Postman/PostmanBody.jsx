@@ -362,7 +362,7 @@ const PostmanBody = ({
     return <Row style={{marginTop: 12}}>
       <Col span={24}>
         <Card bodyStyle={{padding: 0}}>
-          <JSONAceEditor value={body} onChange={e => setBody(e)} height="20vh" setEditor={setEditor}/>
+          <JSONAceEditor value={body} onChange={e => setBody(e)} height="50vh" setEditor={setEditor}/>
         </Card>
       </Col>
     </Row>
