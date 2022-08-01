@@ -151,11 +151,13 @@ const TestCaseDirectory = ({testcase, gconfig, project, user, loading, dispatch}
       // 自动省略多余数据
       ellipsis: true,
       fixed: 'left',
+      width: 200,
     },
     {
       title: "请求协议",
       dataIndex: "request_type",
       key: 'request_type',
+      width: 80,
       render: request_type => CONFIG.REQUEST_TYPE[request_type]
     },
     {
@@ -496,7 +498,7 @@ const TestCaseDirectory = ({testcase, gconfig, project, user, loading, dispatch}
                                     setAddCaseVisible={setAddCaseVisible}/>
             </Drawer>
             <RecorderDrawer directory={directory} visible={recorderModal} setVisible={setRecorderModal}/>
-            <SplitPane className="pitySplit" split="vertical" minSize={260} defaultSize={300} maxSize={800}>
+            <SplitPane className="pitySplit" split="vertical" minSize={200} defaultSize={200} maxSize={400}>
               <ScrollCard className="card" hideOverflowX bodyPadding={12}>
                 <Row gutter={8}>
                   <Col span={24}>
@@ -628,7 +630,7 @@ const TestCaseDirectory = ({testcase, gconfig, project, user, loading, dispatch}
                                }}
                                dataSource={testcases}
                                loading={loading.effects['testcase/listTestcase'] || loading.effects['testcase/executeTestcase']}
-                               scroll={{x: 900,}}/>
+                               scroll={{x: 1100,}}/>
                       </Col>
                     </Row>
                   </> : <Empty image={emptyWork} imageStyle={{height: 230}}
