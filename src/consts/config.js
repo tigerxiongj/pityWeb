@@ -11,11 +11,13 @@ const isDev = () => {
 
 const dev = isDev()
 
+const PROD_API_URL = ''
+
 const getUrl = () => {
   if (defaultSettings.apiUrl !== null) {
     return defaultSettings.apiUrl;
   }
-  return dev ? 'http://localhost:7777' : 'https://api.pity.fun'
+  return dev ? 'http://localhost:7777' : PROD_API_URL
 }
 
 const getWss = () => {
